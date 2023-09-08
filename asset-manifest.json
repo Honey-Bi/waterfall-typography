@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.css": "/wiper-typography/static/css/main.e34d7a48.css",
-    "main.js": "/wiper-typography/static/js/main.2d9e8e0e.js",
-    "index.html": "/wiper-typography/index.html",
-    "main.e34d7a48.css.map": "/wiper-typography/static/css/main.e34d7a48.css.map",
-    "main.2d9e8e0e.js.map": "/wiper-typography/static/js/main.2d9e8e0e.js.map"
+    "main.css": "/waterfall-typography/static/css/main.e34d7a48.css",
+    "main.js": "/waterfall-typography/static/js/main.2d9e8e0e.js",
+    "index.html": "/waterfall-typography/index.html",
+    "main.e34d7a48.css.map": "/waterfall-typography/static/css/main.e34d7a48.css.map",
+    "main.2d9e8e0e.js.map": "/waterfall-typography/static/js/main.2d9e8e0e.js.map"
   },
   "entrypoints": [
     "static/css/main.e34d7a48.css",
