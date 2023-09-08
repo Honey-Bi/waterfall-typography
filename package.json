@@ -1,7 +1,7 @@
 {
-  "name": "wiper-typography",
+  "name": "waterfall-typography",
   "version": "0.1.0",
-  "homepage": "https://Honey-Bi.github.io/wiper-typography",
+  "homepage": "https://Honey-Bi.github.io/waterfall-typography",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
