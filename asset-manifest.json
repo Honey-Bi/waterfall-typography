@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/wiper-typography/static/css/main.e34d7a48.css",
+    "main.js": "/wiper-typography/static/js/main.2d4c7be2.js",
+    "index.html": "/wiper-typography/index.html",
+    "main.e34d7a48.css.map": "/wiper-typography/static/css/main.e34d7a48.css.map",
+    "main.2d4c7be2.js.map": "/wiper-typography/static/js/main.2d4c7be2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e34d7a48.css",
+    "static/js/main.2d4c7be2.js"
+  ]
+}
