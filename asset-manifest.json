@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/waterfall-typography/static/css/main.e34d7a48.css",
-    "main.js": "/waterfall-typography/static/js/main.2d9e8e0e.js",
+    "main.js": "/waterfall-typography/static/js/main.33b2820b.js",
     "index.html": "/waterfall-typography/index.html",
     "main.e34d7a48.css.map": "/waterfall-typography/static/css/main.e34d7a48.css.map",
-    "main.2d9e8e0e.js.map": "/waterfall-typography/static/js/main.2d9e8e0e.js.map"
+    "main.33b2820b.js.map": "/waterfall-typography/static/js/main.33b2820b.js.map"
   },
   "entrypoints": [
     "static/css/main.e34d7a48.css",
-    "static/js/main.2d9e8e0e.js"
+    "static/js/main.33b2820b.js"
   ]
 }
