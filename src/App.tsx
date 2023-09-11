@@ -164,22 +164,21 @@ function App() {
         ctx.closePath();
         ctx.restore();
       } else {
+        balls[i].position = { x: cursor.x, y: cursor.y };
         balls[i].velocity = { x: 0, y: 0 };
-        balls[i].position = { ...cursor };
-
         // 범위 확인용
-        // ctx.beginPath();
-        // ctx.fillStyle = balls[i].color;
-        // ctx.arc(
-        //   balls[i].position.x,
-        //   balls[i].position.y,
-        //   balls[i].radius,
-        //   0,
-        //   2 * Math.PI,
-        //   true
-        // );
-        // ctx.fill();
-        // ctx.closePath();
+        ctx.beginPath();
+        ctx.strokeStyle = balls[i].color;
+        ctx.arc(
+          balls[i].position.x,
+          balls[i].position.y,
+          balls[i].radius,
+          0,
+          2 * Math.PI,
+          true
+        );
+        ctx.stroke();
+        ctx.closePath();
       }
 
       // 공 부딪힘 계산
@@ -259,16 +258,21 @@ function App() {
   }
   useEffect(() => {
     if (divide && balls.length === NUM_PARTICLES) {
-      balls.push(new Ball(cursor.x, cursor.y, 70, 0.7, 10, true));
+      balls.push(new Ball(cursor.x, cursor.y, 30, 0.7, 10, true));
     } else if (!divide && balls.length > NUM_PARTICLES) {
       balls.pop();
     }
   }, [cursor.x, cursor.y, divide]);
 
   function setPosition(e: React.MouseEvent | React.TouchEvent) {
-    if (e instanceof MouseEvent) setCursor({ x: e.clientX, y: e.clientY });
-    else if (e instanceof TouchEvent)
-      setCursor({ x: e.changedTouches[0].pageX, y: e.changedTouches[0].pageY });
+    if (e.nativeEvent instanceof MouseEvent) {
+      setCursor({ x: e.nativeEvent.clientX, y: e.nativeEvent.clientY });
+    } else if (e.nativeEvent instanceof TouchEvent) {
+      setCursor({
+        x: e.nativeEvent.changedTouches[0].pageX,
+        y: e.nativeEvent.changedTouches[0].pageY,
+      });
+    }
   }
 
   return (
