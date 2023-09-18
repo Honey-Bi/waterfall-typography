@@ -22,14 +22,7 @@ class Ball {
   angle: number; // 회전양
   rotate: number; //회전속도
   isMouse: boolean; //마우스인지
-  constructor(
-    x: number,
-    y: number,
-    radius: number,
-    e: number,
-    mass: number,
-    isMouse: boolean
-  ) {
+  constructor(x: number, y: number, radius: number, e: number, mass: number, isMouse: boolean) {
     this.position = { x: x, y: y };
     this.velocity = { x: 0, y: 0 };
     this.e = -e;
@@ -169,14 +162,7 @@ function App() {
         // 범위 확인용
         ctx.beginPath();
         ctx.strokeStyle = balls[i].color;
-        ctx.arc(
-          balls[i].position.x,
-          balls[i].position.y,
-          balls[i].radius,
-          0,
-          2 * Math.PI,
-          true
-        );
+        ctx.arc(balls[i].position.x, balls[i].position.y, balls[i].radius, 0, 2 * Math.PI, true);
         ctx.stroke();
         ctx.closePath();
       }
@@ -225,20 +211,12 @@ function App() {
             var nx = (b2.position.x - b1.position.x) / d;
             var ny = (b2.position.y - b1.position.y) / d;
             var p =
-              (2 *
-                (b1.velocity.x * nx +
-                  b1.velocity.y * ny -
-                  b2.velocity.x * nx -
-                  b2.velocity.y * ny)) /
+              (2 * (b1.velocity.x * nx + b1.velocity.y * ny - b2.velocity.x * nx - b2.velocity.y * ny)) /
               (b1.mass + b2.mass);
 
             // 충돌 지점 계산
-            var colPointX =
-              (b1.position.x * b2.radius + b2.position.x * b1.radius) /
-              (b1.radius + b2.radius);
-            var colPointY =
-              (b1.position.y * b2.radius + b2.position.y * b1.radius) /
-              (b1.radius + b2.radius);
+            var colPointX = (b1.position.x * b2.radius + b2.position.x * b1.radius) / (b1.radius + b2.radius);
+            var colPointY = (b1.position.y * b2.radius + b2.position.y * b1.radius) / (b1.radius + b2.radius);
 
             // 중복 중지
             b1.position.x = colPointX + (b1.radius * (b1.position.x - b2.position.x)) / d;
