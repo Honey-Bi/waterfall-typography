@@ -52,7 +52,7 @@ function App() {
   const [divide, setDivede] = useState<boolean>(false);
   const NUM_PARTICLES = 100; // 파티클 개수
   const fps = 1 / 60; //프레임
-
+  const radius = 25;
   // 캔버스 크기 조절 및 초기화
   useEffect(() => {
     //context 처리
@@ -63,7 +63,8 @@ function App() {
     setCtx(context);
     while (balls.length < NUM_PARTICLES) {
       //  x y 반지름 속도감쇄율 무게 색상
-      balls.push(new Ball(0, 0, 25, 0.7, 10, false));
+
+      balls.push(new Ball(-radius - 1, 0, radius, 0.7, 10, false));
     }
   }, [NUM_PARTICLES]);
 
@@ -178,9 +179,9 @@ function App() {
   function collisionWall(ball: Ball) {
     if (ball.isMouse) return;
     if (
-      ball.position.x > size.width + ball.radius || //right
-      ball.position.y > size.height + ball.radius || // bottom
-      ball.position.x < ball.radius // left
+      ball.position.x > size.width + ball.radius * 2 || //right
+      ball.position.y > size.height + ball.radius * 2 || // bottom
+      ball.position.x < -ball.radius // left
     ) {
       ball.velocity.x = rand(-DEFAULT_VELOCITY, DEFAULT_VELOCITY);
       ball.velocity.y = rand(0, DEFAULT_VELOCITY);
